@@ -12,6 +12,7 @@ public class MessageResponse {
 	public MessageResponse(String message) {
 		super();
 	}
+	@SuppressWarnings("unchecked")
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<?> handleMessageResource(Exception exception,WebRequest request){
 		ErrorDetails errorDetails=new ErrorDetails(new Date(),exception.getMessage(),request.getDescription(false));
